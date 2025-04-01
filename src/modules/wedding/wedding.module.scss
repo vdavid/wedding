@@ -1,3 +1,4 @@
+@use "sass:color";
 $screen-sm-width: 768px;
 
 .page {
@@ -6,10 +7,11 @@ $screen-sm-width: 768px;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
+    
     @media (max-width: $screen-sm-width) {
         height: inherit;
     }
-    overflow: hidden;
 
     h1 {
         margin: 0;
@@ -106,7 +108,7 @@ $screen-sm-width: 768px;
     transition: background-color 0.3s;
 
     &:hover {
-        background-color: darken(#f8bbd0, 10%);
+        background-color: color.adjust(#f8bbd0, $lightness: -10%);
     }
 }
 
