@@ -24,11 +24,19 @@ const WeddingLayout = (props: Props) => {
         <div>
             <Head>
                 <title>{props.title || '(Untitled)'}</title>
+                <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta
                     name="locale"
                     property="og:locale"
                     content={(props.locale || 'en-US').replace('-', '_')}
+                />
+                <meta name="author" content="David Veszelovszki" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+                    rel="stylesheet"
                 />
                 {props.description && <meta name="description" content={props.description} />}
                 {props.keywords && <meta name="keywords" content={props.keywords} />}

@@ -4,7 +4,6 @@
 /.idea
 /.vscode
 /.cosine
-/data
 .DS_Store
 *.pem
 .env.development.local

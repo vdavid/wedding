@@ -4,11 +4,10 @@ A modern wedding website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Built with Next.js 15
+- Built with Next.js
 - TypeScript for type safety
 - Tailwind CSS for styling
 - ESLint and Prettier for code quality
-- Vitest for testing
 - Responsive design
 
 ## Getting Started
@@ -48,8 +47,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `pnpm start` - Start the production server
 - `pnpm lint` - Run ESLint
 - `pnpm format` - Format code with Prettier
-- `pnpm test` - Run tests
-- `pnpm test:coverage` - Run tests with coverage report
 
 ## License
 
