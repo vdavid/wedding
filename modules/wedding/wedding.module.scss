@@ -1,0 +1,156 @@
+$screen-sm-width: 768px;
+
+.page {
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    @media (max-width: $screen-sm-width) {
+        height: inherit;
+    }
+    overflow: hidden;
+
+    h1 {
+        margin: 0;
+        padding: 20px; // You can adjust this padding to set the height of h1
+        opacity: 0.85;
+    }
+
+    .bikeImage {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: fit-content;
+        flex-grow: 1; // This will make the image fill the remaining space
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        img {
+            height: 100%;
+            max-width: fit-content;
+            min-height: 0;
+            width: auto;
+        }
+    }
+
+    .coreInfo {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+
+        // For mobile screens, stack the items
+        @media (max-width: $screen-sm-width) {
+            flex-direction: column;
+        }
+
+        div {
+            // Assuming each column content is wrapped in a div
+            flex: 1; // Make each div take equal width
+            margin: 0 10px;
+            text-align: center;
+            @media (max-width: $screen-sm-width) {
+                margin: 0;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.main {
+    iframe {
+        width: 100%;
+    }
+
+    .program {
+        text-align: center;
+
+        ul {
+            width: fit-content;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: left;
+        }
+    }
+}
+
+.separator {
+    img {
+        margin: 0 auto;
+    }
+}
+
+.menuButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #f8bbd0; // Material Design color
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken(#f8bbd0, 10%);
+    }
+}
+
+.menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .menu {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(0.9);
+        opacity: 0;
+        animation: fadeIn 0.3s forwards;
+
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #6200ea;
+
+            &:hover {
+                background-color: rgba(98, 0, 234, 0.1);
+            }
+        }
+
+        ul {
+            margin: 0;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
