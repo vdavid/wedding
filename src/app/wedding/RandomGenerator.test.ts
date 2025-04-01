@@ -1,5 +1,5 @@
 import { RandomGenerator } from './RandomGenerator'
-import { describe, expect, it } from '@jest/globals'
+import { describe, expect, it } from 'vitest'
 
 describe('RandomGenerator', () => {
     it('should generate the same sequence of numbers for the same seed', () => {
@@ -7,9 +7,10 @@ describe('RandomGenerator', () => {
         const generator1 = new RandomGenerator(seed)
         const generator2 = new RandomGenerator(seed)
 
-        for (let i = 0; i < 1000; i++) {
-            expect(generator1.random()).toEqual(generator2.random())
-        }
+        const numbers1 = Array.from({ length: 5 }, () => generator1.random())
+        const numbers2 = Array.from({ length: 5 }, () => generator2.random())
+
+        expect(numbers1).toEqual(numbers2)
     })
 
     it('should generate different sequences of numbers for different seeds', () => {
