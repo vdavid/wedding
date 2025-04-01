@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import WeddingLayout from '../modules/wedding/WeddingLayout'
-import styles from '../../modules/wedding/wedding.module.scss'
+import styles from '../modules/wedding/wedding.module.scss'
 import Image from 'next/image'
-import headerPic from '../../public/d-d-wedding-header.svg'
-import uglyMajorMapPic from '../../public/ugly-major-map.jpg'
-import bikePic from '../../public/bike.png'
-import majorWelcomePic from '../../public/major-coming-soon-mpap-by-dori.jpg'
+import headerPic from '/public/d-d-wedding-header.svg'
+import uglyMajorMapPic from '/public/ugly-major-map.jpg'
+import bikePic from '/public/bike.png'
+import majorWelcomePic from '/public/major-coming-soon-map-by-dori.jpg'
 import Separator from '../modules/wedding/Separator'
 
 const Page = () => {
@@ -15,10 +15,10 @@ const Page = () => {
         <WeddingLayout title="Dóri & Dávid esküvő" description="2023. szeptember 2.">
             <header className={styles.header}>
                 <h1>
-                    <Image src={headerPic} alt="Dóri és Dávid esküvő felirat" />
+                    <img src={headerPic.src} alt="Dóri és Dávid esküvő felirat" width="100%" />
                 </h1>
                 <section className={styles.bikeImage}>
-                    <Image src={bikePic} alt="bike" />
+                    <img src={bikePic.src} alt="bike" width="100%" />
                 </section>
                 <section className={styles.coreInfo}>
                     <div>
@@ -279,7 +279,7 @@ const Page = () => {
                             <li>
                                 <strong>Nem.</strong> (Kivéve, ha tőlünk függetlenül, egyénileg
                                 foglaltál.) Ha a Csillag panzióban vagy a Szepi fogadóban alszol, a
-                                “Veszelovszki Dávid” névre van foglalva az Ha ez kellemetlenséget
+                                "Veszelovszki Dávid" névre van foglalva az Ha ez kellemetlenséget
                                 okoz, nézd meg az ajándékozós kéréseket lejjebb.
                             </li>
                         </ul>
@@ -407,7 +407,7 @@ const Page = () => {
                     </li>
                     <li>
                         <strong>Hogy néz ki a major? Mi hol van?</strong>
-                        <Image src={uglyMajorMapPic} alt="térkép1" />
+                        <img src={uglyMajorMapPic.src} alt="térkép1" width="100%" />
                     </li>
                     <li>
                         <strong>Mindent meg kell ennünk/innunk?</strong>
@@ -550,7 +550,7 @@ const Page = () => {
                     </li>
                 </ul>
                 <Separator index={4} />
-                <Image src={majorWelcomePic} alt="A Lósi Major térképe Dóri tollából" />
+                <img src={majorWelcomePic.src} alt="A Lósi Major térképe Dóri tollából" width="100%" />
             </main>
 
             <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
